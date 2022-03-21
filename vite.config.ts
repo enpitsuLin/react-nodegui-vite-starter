@@ -26,12 +26,18 @@ export default defineConfig({
   build: {
     outDir: "./dist",
     sourcemap: false,
-    lib: {
-      entry: resolve(__dirname, "./src/main.tsx"),
-      formats: ["cjs"],
-      fileName: () => "index.js"
-    },
+    minify: false,
     rollupOptions: {
+      input: resolve(__dirname, "./src/index.tsx"),
+      output: [
+        {
+          dir: "./dist",
+          format: "cjs",
+          entryFileNames: () => {
+            return `[name].js`;
+          }
+        }
+      ],
       external: ["@nodegui/nodegui"]
     }
   }
