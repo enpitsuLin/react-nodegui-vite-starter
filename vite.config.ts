@@ -27,7 +27,7 @@ export default defineConfig({
     outDir: "./dist",
     sourcemap: false,
     lib: {
-      entry: resolve(__dirname, "./src/main.ts"),
+      entry: resolve(__dirname, "./src/main.tsx"),
       formats: ["cjs"],
       fileName: () => "index.js"
     },
