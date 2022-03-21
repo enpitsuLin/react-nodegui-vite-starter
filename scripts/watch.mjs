@@ -29,7 +29,7 @@ function watch(server) {
     name: "electron-main-watcher",
     writeBundle() {
       nodeGuiProcess && nodeGuiProcess.kill();
-      nodeGuiProcess = spawn(cmd, ["exec", "qode", "."], { stdio: "inherit", env });
+      nodeGuiProcess = spawn(cmd, ["exec", "qode", '--inspect', "."], { stdio: "inherit", env });
     }
   };
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev":"node ./scripts/watch.mjs"
+    "dev": "node ./scripts/watch.mjs"
   },
   "author": "enpitsulin",
   "license": "MIT",
@@ -12,8 +12,6 @@
     "@nodegui/nodegui": "^0.47.0",
     "@nodegui/vue-nodegui": "^0.0.5",
     "@types/node": "^17.0.21",
-    "@vitejs/plugin-vue": "^2.2.4",
-    "vite": "^2.8.6",
-    "vue": "^3.2.31"
+    "vite": "^2.8.6"
   }
 }
