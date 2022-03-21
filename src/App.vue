@@ -1,6 +1,7 @@
 <template>
+  <vn-view></vn-view>
 </template>
 
-<script>
-  export default { }
+<script lang="ts">
+export default {}
 </script>

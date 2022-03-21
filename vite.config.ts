@@ -29,7 +29,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "./src/main.ts"),
       formats: ["cjs"],
-      fileName: () => "[name].cjs"
+      fileName: () => "index.js"
     },
     rollupOptions: {
       external: ["@nodegui/nodegui"]
