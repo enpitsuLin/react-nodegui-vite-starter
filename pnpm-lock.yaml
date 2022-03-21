@@ -15,12 +15,12 @@ dependencies:
   '@nodegui/nodegui': 0.47.0
   '@nodegui/react-nodegui': registry.npmmirror.com/@nodegui/react-nodegui/0.13.0_react@17.0.2
   '@nodegui/vue-nodegui': registry.npmmirror.com/@nodegui/vue-nodegui/0.0.5
-  '@types/node': registry.npmmirror.com/@types/node/17.0.21
   open: registry.npmmirror.com/open/8.4.0
   react: registry.npmmirror.com/react/17.0.2
   vite: 2.8.6
 
 devDependencies:
+  '@types/node': registry.npmmirror.com/@types/node/17.0.21
   '@types/react': registry.npmmirror.com/@types/react/17.0.41
   '@vitejs/plugin-react': registry.npmmirror.com/@vitejs/plugin-react/1.2.0
 
@@ -1462,7 +1462,7 @@ packages:
     resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-17.0.21.tgz}
     name: '@types/node'
     version: 17.0.21
-    dev: false
+    dev: true
 
   registry.npmmirror.com/@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/prop-types/-/prop-types-15.7.4.tgz}
