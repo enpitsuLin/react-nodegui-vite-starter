@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node ./scripts/watch.mjs",
+    "postbuild":"node ./scripts/postbuild.mjs",
     "build": "node ./scripts/build.mjs",
     "deploy": "nodegui-packer --pack ./dist/"
   },

@@ -19,7 +19,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ["@nodegui/nodegui", "@nodegui/react-nodegui", "@nodegui/qode", "react", ...commonjsPackages],
-      plugins: [nodeResolve()]
+      plugins: [nodeResolve]
     }
   }
 });
