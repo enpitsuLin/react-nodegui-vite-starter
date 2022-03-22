@@ -1,5 +1,5 @@
 import { createServer, build } from "vite";
-import { spawn } from "child_process";
+import { spawn, execSync } from "child_process";
 import { platform } from "os";
 
 let cmd = "npm";
@@ -28,8 +28,17 @@ function watch(server) {
   const startNodeGui = {
     name: "electron-main-watcher",
     writeBundle() {
-      nodeGuiProcess && nodeGuiProcess.kill();
-      nodeGuiProcess = spawn(cmd, ["exec", "qode", '--inspect', "."], { stdio: "inherit", env });
+      if (nodeGuiProcess) {
+        if (platform() === "win32") {
+          execSync(`taskkill /F /T /PID ${nodeGuiProcess.pid}`); // windows specific
+        } else {
+          nodeGuiProcess.kill();
+        }
+      }
+      nodeGuiProcess = spawn(cmd, ["exec", "qode", "--inspect", "."], { stdio: "inherit", env });
+      nodeGuiProcess.on("close", () => {
+        process.exit();
+      });
     }
   };
 
