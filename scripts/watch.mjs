@@ -28,16 +28,22 @@ function watch(server) {
   const startNodeGui = {
     name: "electron-main-watcher",
     writeBundle() {
-      if (nodeGuiProcess) {
+      if (nodeGuiProcess && !nodeGuiProcess.killed) {
         if (platform() === "win32") {
-          execSync(`taskkill /F /T /PID ${nodeGuiProcess.pid}`); // windows specific
+          try {
+            execSync(`taskkill /F /T /PID ${nodeGuiProcess.pid}`); // windows specific
+          } catch (error) {
+            console.log('error killing node-gui process');
+          }
         } else {
           nodeGuiProcess.kill();
         }
       }
       nodeGuiProcess = spawn(cmd, ["exec", "qode", "--inspect", "."], { stdio: "inherit", env });
-      nodeGuiProcess.on("close", () => {
-        process.exit();
+      nodeGuiProcess.on("close", (code) => {
+        if (code == 1) {
+          process.exit(0)
+        }
       });
     }
   };
