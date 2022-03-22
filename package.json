@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "node ./scripts/watch.mjs",
-    "build": "node ./scripts/build.mjs"
+    "build": "node ./scripts/build.mjs",
+    "export": "nodegui-packer --pack ./dist/"
   },
   "author": "enpitsulin <enpitsulin@gmail.com>",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "vite": "^2.8.6"
   },
   "devDependencies": {
+    "@nodegui/packer": "^1.5.0",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.41",
     "@vitejs/plugin-react": "^1.2.0"
