@@ -9,7 +9,7 @@ function nativePlugin(): Plugin {
     name: "native-plugin",
     async transform(src, id) {
       console.log(id);
-      
+
       if (id.endsWith(".node")) {
         return `
             try {
@@ -31,7 +31,7 @@ export default defineConfig({
   build: {
     outDir: "./dist",
     sourcemap: false,
-    minify: false,
+    minify: process.env.NODE_ENV === "production",
     rollupOptions: {
       input: resolve(__dirname, "./src/index.tsx"),
       output: {
