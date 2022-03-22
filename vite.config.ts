@@ -32,15 +32,12 @@ export default defineConfig({
     outDir: "./dist",
     sourcemap: false,
     minify: process.env.NODE_ENV === "production",
+    lib: {
+      entry: resolve(__dirname, "./src/index.tsx"),
+      formats: ["cjs"],
+      fileName: () => "index.js"
+    },
     rollupOptions: {
-      input: resolve(__dirname, "./src/index.tsx"),
-      output: {
-        dir: "./dist",
-        format: "cjs",
-        entryFileNames: (chunk) => {
-          return `${chunk.name}.js`;
-        }
-      },
       external: ["@nodegui/nodegui", "@nodegui/react-nodegui", "@nodegui/qode", "react", ...commonjsPackages]
     }
   }
