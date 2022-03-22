@@ -1,10 +1,10 @@
 # react-nodegui-vite-starter
 
-A [Vite](https://vitejs.dev/) powered React NodeGui starter template 
+A React NodeGui starter template ⚡️ powered by Vite rather then webpack
 
-## Features
 
-- ⚡️ Instant HMR - use Vite on dev rather than webpack
+![demo](https://user-images.githubusercontent.com/29378026/159410891-3ef20347-c266-4b94-b23e-a1825f9c41bb.png)
+
 
 ## Use the Template
 
@@ -23,6 +23,8 @@ pnpm dev
 ```
 
 ### Packaging app as a distributable
+
+In order to distribute your finished app, you can use [@nodegui/packer](https://github.com/nodegui/packer)
 
 #### Step 1: init your app
 
@@ -45,7 +47,8 @@ This will produce the js bundle along with assets inside the `./dist` directory
 pnpm deploy
 ```
 
-This will build the distributable using [@nodegui/packer](https://github.com/nodegui/packer) based on your build products
+This will build the distributable using @nodegui/packer based on your build products
 
 # License
+
 MIT
