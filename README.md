@@ -1,6 +1,6 @@
 # react-nodegui-vite-starter
 
-A React NodeGui starter template ⚡️ powered by Vite rather then webpack
+A React NodeGui starter template ⚡️ powered by Vite rather than webpack
 
 
 ![demo](https://user-images.githubusercontent.com/29378026/159410891-3ef20347-c266-4b94-b23e-a1825f9c41bb.png)
