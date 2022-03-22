@@ -1,12 +1,13 @@
 {
-  "name": "nodegui",
+  "name": "react-nodegui-vite",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "dev": "node ./scripts/watch.mjs"
   },
-  "author": "enpitsulin",
+  "author": "enpitsulin <enpitsulin@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@nodegui/nodegui": "^0.47.0",
