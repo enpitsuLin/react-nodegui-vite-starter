@@ -10,7 +10,7 @@ A [Vite](https://vitejs.dev/) powered React NodeGui starter template
 
 ### GitHub Template
 
-[Create a repo with this template on GitHub](./generate)
+[Create a repo with this template on GitHub](/generate)
 
 ## Usage
 
