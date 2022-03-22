@@ -1,33 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { resolve } from "path";
-import { Plugin } from "vite";
 import { builtinModules } from "module";
-
-function nativePlugin(): Plugin {
-  return {
-    name: "native-plugin",
-    async transform(src, id) {
-      console.log(id);
-
-      if (id.endsWith(".node")) {
-        return `
-            try {
-                global.process.dlopen(module, '${id}');
-            } catch(exception) {
-                throw new Error('Cannot open  ${id} :'+ exception);
-            }
-            export default module.exports;
-        `;
-      }
-    }
-  };
-}
 
 const commonjsPackages = [...builtinModules] as const;
 
 export default defineConfig({
-  plugins: [nativePlugin(), react()],
+  plugins: [react()],
   build: {
     outDir: "./dist",
     sourcemap: false,
@@ -38,7 +18,8 @@ export default defineConfig({
       fileName: () => "index.js"
     },
     rollupOptions: {
-      external: ["@nodegui/nodegui", "@nodegui/react-nodegui", "@nodegui/qode", "react", ...commonjsPackages]
+      external: ["@nodegui/nodegui", "@nodegui/react-nodegui", "@nodegui/qode", "react", ...commonjsPackages],
+      plugins: [nodeResolve()]
     }
   }
 });
