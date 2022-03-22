@@ -4,9 +4,8 @@ import App from "./App";
 
 process.title = "My NodeGui App";
 Renderer.render(<App />);
-// This is for hot reloading (this will be stripped off in production by webpack)
 if (import.meta.hot) {
-  import.meta.hot.accept(["./app"], function () {
+  import.meta.hot.accept(["./App"], function () {
     Renderer.forceUpdate();
   });
 }
