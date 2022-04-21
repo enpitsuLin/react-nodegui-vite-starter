@@ -26,7 +26,7 @@ function watch(server) {
    * @type {import('vite').Plugin}
    */
   const startNodeGui = {
-    name: "electron-main-watcher",
+    name: "nodegui-main-watcher",
     writeBundle() {
       if (nodeGuiProcess && !nodeGuiProcess.killed) {
         if (platform() === "win32") {
